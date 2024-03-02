@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="/css/style.css">  
+</head>
+<body>
+    <%- include('partials/navbar.ejs') %>
+    <main id="landing-main">
+        <div id="landing-greeting">
+            <img src="/assets/mangement.png" alt="">
+            <h1>Bienvenue sur KAROZAD</h1>
+            <p>
+                Optimisez la gestion de votre usine de marbre avec KAROZAD-app, 
+                l'application de pointe développée par Abdellatif Zidane.
+                 Révolutionnez la manière dont vous gérez la production, 
+                 l'inventaire et la logistique avec notre ensemble complet d'outils spécialement conçus pour la fabrication de marbre.
+            </p>        
+        </div>
+    </main>
+    <%- include('partials/sidebar.ejs') %>
+    <script src="/js/sidebar.js"></script>
+</body>
+</html>

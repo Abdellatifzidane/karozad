@@ -1,0 +1,127 @@
+<form class="create-order-form" method="post" action="/createOrder">
+
+  <input name="costumer-name" class="form-control" list="datalistOptions" id="create-order-costumer-selector" placeholder="Type to search..." required>
+  <input name="customer-id" type="hidden" id="customer-id" required>
+  <input name="order-id" type="hidden"  value="<%= orderId %>" required>
+
+  <datalist id="datalistOptions">
+      <% customers.forEach(customer => { %>
+          <option data-id="<%= customer.id %>" value="<%= customer.name %> <%= customer.surname %>">
+      <% }); %>
+  </datalist>
+  
+  <button class="btn btn-info" type="button" id="button-addon2">Ajouter un produit</button>
+
+  <ul class="create-order-products-list">
+    
+    <li id="li">
+      <div id="quantity-alert" class="alert alert-warning" role="alert">
+        Attention: la quantité en stock est insuffisante !
+      </div>
+      <!-- Assuming products is an array of objects with id and name properties -->
+      <select id='create-order-product-selector' name="product-id" class="form-select" aria-label="Default select example" required>
+        <% products.forEach(product => { %>
+        <option data-product-total-quantity="<%= product.total_quantity %>" value="<%= product.id %>"><%= product.name %></option>
+        <% }); %>
+      </select>
+      <select name="product-shape" class="form-select" id="create-order-shape-selector" aria-label="Default select example" required>
+        <option selected value="square">Carré</option>
+        <option value="rectangle">Rectangle</option>
+        <option value="triangle">Triangle</option>
+        <option value="other">Autre</option>
+      </select>
+      <span class="delete-icon">&times;</span>
+      <div class="create-order-products-mesurments">
+        <div class="input-group">
+          <input name="product-length" type="text" id="create-order-length-input" class="form-control" placeholder="longeur" aria-label="Dollar amount (with dot and two decimal places)" required>
+          <span id="Area-unit-mesurment" class="input-group-text">cm</span>
+        </div>
+        <div class="input-group">
+          <input name="product-width" type="text" id="create-order-width-input" class="form-control" placeholder="largeur" aria-label="Dollar amount (with dot and two decimal places)" required>
+          <span class="input-group-text">cm</span>
+        </div>
+        <div class="input-group">
+          <input name="product-angle" type="text" id="create-order-angle-input" class="form-control" placeholder="Ongle" aria-label="Dollar amount (with dot and two decimal places)" required>
+          <span class="input-group-text">deg</span>
+        </div>
+        <div class="input-group">
+          <input name="product-quantity" type="text" id="create-order-quantity-input" class="form-control" placeholder="Quantité" aria-label="Dollar amount (with dot and two decimal places)" required>
+        </div> 
+        <div class="input-group">
+          <input name="product-price" type="text" id="create-order-product-price-input" class="form-control" placeholder="Prix" aria-label="Dollar amount (with dot and two decimal places)" required>
+          <span class="input-group-text">DA</span>
+        </div>
+      </div>   
+      <div class="card-body">
+        <div class="row mb-3">
+          <div class="col-sm-3">
+            <strong>Couts unitaire:</strong>
+          </div>
+          <div id="unit-price-per-product" class="col-sm-5">
+            0
+          </div>
+          <span>DA</span>
+        </div>
+        <div class="row mb-3">
+          <div class="col-sm-3">
+            <strong>Couts total</strong>
+          </div>
+          <div id="total-price-per-product" class="col-sm-5">
+            0
+          </div>
+          <span>DA</span>
+        </div>
+      </div>
+      <input id="unit-price-Per-Product-hidden-input" type="hidden" name="unit-price-Per-Product-hidden-input">
+      <input id="total-price-Per-Product-hidden-input" type="hidden" name="total-price-Per-Product-hidden-input">
+    </li> 
+  </ul>
+
+  <div id="create-order-form-overview">
+    <div class="row mb-3">
+      <div class="col-sm-3">
+        <strong>Montant Total</strong>
+      </div>
+      <div id="order-total-price" >
+        0
+      </div>
+      <span>DA</span>
+    </div>  
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="payment-status" id="payment-radio" value="whole-payment" required>
+      <label class="form-check-label" for="exampleRadios1">
+        Paiement complet
+      </label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="payment-status" id="versement-radio" value="partial-payment" checked required>
+      <label class="form-check-label" for="exampleRadios2">
+        Versement
+      </label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="payment-status" id="not-payed-radio" value="not-payed" required>
+      <label class="form-check-label" for="exampleRadios2">
+        Non payé
+      </label>
+    </div>
+    <select name="order-status" class="form-select" aria-label="Default select example" required>
+      <option value="pending">En cours</option>
+      <option value="not-confirmed">non confirmé</option>
+    </select>
+    <div class="input-group" id="versed-amount-container">
+      <input type="text" class="form-control" name="partial-payment-amount"  placeholder="Montant" aria-label="Dollar amount (with dot and two decimal places)" required>
+      <span class="input-group-text">DA</span>
+    </div>
+  </div>
+  <input id="order-total-price-hidden-input" type="hidden" name="order-total-price-hidden-input">
+  <input id="stayed-to-pay" type="hidden" name="stayed-to-pay">
+
+  <% if(locals.orderSubmitted == true){ %>
+  <div id="createdOrderMessage" class="alert alert-success" role="alert">
+    la commande a été Ajouter avec succès
+  </div>
+  <% } %>
+
+  <button  type="submit" id="submitBtn" class="btn btn-success">Ajouter</button>
+</form>

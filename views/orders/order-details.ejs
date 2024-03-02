@@ -1,0 +1,145 @@
+
+<div id="order-details-container">
+    <div class="card mt-4">
+        <h1 class="mt-3">Informations sur la commande</h1>
+      <div class="card-body">
+        <div class="row mb-3">
+          <div class="col-sm-3">
+            <strong>Numéro:</strong>
+          </div>
+          <div class="col-sm-9">
+            12345
+          </div>
+        </div>
+        <div class="row mb-3">
+          <div class="col-sm-3">
+            <strong>nom du client:</strong>
+          </div>
+          <div class="col-sm-9">
+            John Doe
+          </div>
+        </div>
+        <div class="row mb-3">
+          <div class="col-sm-3">
+            <strong>Date:</strong>
+          </div>
+          <div class="col-sm-9">
+            February 17, 2024
+          </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-sm-3">
+              <strong>Etat:</strong>
+            </div>
+            <div class="col-sm-9">
+              En cours
+            </div>
+          </div>
+          <div class="row mb-3">
+            <div class="col-sm-3">
+              <strong>Etat de paiement:</strong>
+            </div>
+            <div class="col-sm-9">
+              Réglée
+            </div>
+          </div>
+          <div class="row mb-3">
+            <div class="col-sm-3"><strong>Versé:</strong></div>
+            <div class="col-sm-9">0</div>
+          </div>
+          <div class="row mb-3">
+            <div class="col-sm-3"> <strong>Reste à payer:</strong></div>
+            <div class="col-sm-9">0</div>
+        </div>
+      </div>
+    </div>
+
+    <table id="squares-rectangles-table" class="table">
+        <thead id="squares-rectangles-head">
+          <tr>
+            <th scope="col">Type de marbre</th>
+            <th scope="col">longeur</th>
+            <th scope="col">largeur</th>
+            <th scope="col">Qte</th>
+            <th scope="col">Prix unitaire</th>
+            <th scope="col">Prix Totale</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+          </tr>
+          <tr>
+          </tr>
+          <tr>
+          </tr>
+        </tbody>
+      </table>
+
+
+      <table id="triangles-table" class="table">
+        <thead id="triangles-head">
+          <tr>
+            <th scope="col">Type de marbre</th>
+            <th scope="col">Coté 1</th>
+            <th scope="col">Coté 2</th>
+            <th scope="col">Ongle</th>
+            <th scope="col">Qte</th>
+            <th scope="col">Prix unitaire</th>
+            <th scope="col">Prix Totale</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+          </tr>
+          <tr>
+          </tr>
+          <tr>
+          </tr>
+        </tbody>
+      </table>
+
+
+      <table id="others-table" class="table">
+        <thead id="others-head">
+          <tr>
+            <th scope="col">Type de marbre</th>
+            <th scope="col">Surface unitaire</th>   
+            <th scope="col">Qte</th>
+            <th scope="col">Prix unitaire</th>
+            <th scope="col">Prix Totale</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+          </tr>
+          <tr>
+          </tr>
+          <tr>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="card mt-4">
+      <div class="card-body">
+        <div class="row mb-3">
+          <div class="col-sm-3">
+            <strong>Couts totale</strong>
+          </div>
+          <div id="order-details-total-price" class="col-sm-9">
+            120000 
+          </div>
+        </div>
+    </div>    
+    </div>
+
+    <div id="deleting-success-alert" class="alert alert-success" role="alert">
+      La commande est bien supprimée !
+    </div>
+
+    <button id="delete-order-button" type="button" class="btn btn-danger">Supprimer</button>
+    <button id="updateOrderButton" type="button" class="btn btn-warning">Modifier</button>
+    <button id="delete-order-button" type="button" class="btn btn-primary ">Bon de production</button>
+    <button id="updateOrderButton" type="button" class="btn btn-success">Bon de commande</button>
+    
+    <%- include('update-order-form.ejs') %>
+</div>

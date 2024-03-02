@@ -1,0 +1,318 @@
+
+ /*
+ -------------------------------------------------body ----------------------------------------------------
+ */
+ body{
+  margin: 0;
+  padding: 0;
+  background-color: #f2f2f2;
+  font-family: "Nunito", sans-serif;
+  overflow-x: hidden;
+ }
+ button:focus {
+  outline: none;
+}
+
+
+ /*
+ -------------------------------------------------navbar ----------------------------------------------------
+ */
+
+
+
+ .navbar{
+    position: fixed;
+    width: 100%;
+    box-shadow: 0 5px 15px rgb(0, 0, 0,0.1);
+    z-index: 10;
+ }
+#logo-karozad{
+    font-size: 20px;
+    font-weight: bold;
+}
+.me-2{
+    height: 25px;
+    width: 25px;
+}
+.btn{
+    color: white;
+}
+
+
+ /*
+ ---------------------------------------------- sidebar -------------------------------------------------------
+ */
+
+ /* Fixed sidenav, full height */
+.sidenav {
+    margin-top: 55px;
+    height: 92%;
+    width: 18%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+    padding-top: 20px;
+    background-color: white;
+  }
+  
+  /* Style the sidenav links and the dropdown button */
+  .sidenav a, .dropdown-btn {
+    padding: 8px 8px 15px 16px;
+    text-decoration: none;
+    font-size: 18px;
+    color :black;
+    display: block;
+    border: none;
+    background: none;
+    width:100%;
+    text-align: left;
+    cursor: pointer;
+    outline: none;
+    }
+  
+  /* On mouse-over */
+  .sidenav a:hover, .dropdown-btn:hover {
+    color: #0d6efd;
+  }
+  
+  /* Main content */
+  .main {
+    margin-left: 200px; /* Same as the width of the sidenav */
+    font-size: 20px; /* Increased text to enable scrolling */
+    padding: 0px 10px;
+  }
+  
+  /* Add an active class to the active dropdown button */
+  .active {
+    color: #0d6efd;
+  }
+  
+  /* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
+  .dropdown-container {
+    display: none;
+    padding-left: 10px;
+  }
+
+  .dropdown-container a {
+    font-size: .9rem;
+  }
+  
+  /* Optional: Style the caret down icon */
+  .fa-caret-down {
+    float: right;
+    padding-right: 8px;
+  }
+
+  .logout-button{
+    margin-top: 160%;
+  }
+
+
+   /*
+ --------------------------------------------------- main -----------------------------------------------
+ */
+
+ main{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  top: 70px;
+  left: 19%;
+ }
+ #landing-main {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+#landing-greeting{
+  position: absolute;
+  top: 15%;
+  left: 10%;
+}
+
+ #landing-main img{
+  height: 10%;
+  width: 10%;
+ }
+ #landing-main p{
+  width: 40%;
+ }
+
+
+    /*
+ --------------------------------------------------- orders-list -----------------------------------------------
+ */
+
+ .orders-list {
+  width: 25%;
+  padding: 0;
+  margin-right: 5px;
+  margin-top: 10px;
+  height: 100vh; 
+  overflow-y: auto;
+ }
+ .list-group{
+  margin-top: 10px;
+  height: 40px;
+ }
+#triangles-table{
+  margin: 0;
+}
+.highlighted {
+  background-color: rgb(208, 252, 255);
+}
+
+
+
+     /*
+ --------------------------------------------------- orders-details -----------------------------------------------
+ */
+
+ #order-details-container{
+  width: 53%;
+  height: 100vh;
+  margin-bottom: 30px ;
+  background-color: #f2f2f2;
+  margin-left: 10px;
+  display: none;
+ }
+ #order-details-container form{
+  width: 100%;
+  display: none;
+ }
+ #order-details-container .alert{
+  margin: 20px 0 0 0;
+  display:none;
+ }
+ #order-details-container h1{
+  font-size: 1.6rem;
+  margin-left: 20px;
+ }
+ #order-details-container .card-body{
+  padding: 10px 0 0 15px;
+ }
+ .card{
+  border: 0;
+ }
+ .table{
+  background-color: white;
+  margin-top: 15px;
+ }
+ #order-details-total-price{
+  display: inline;
+  color: rgb(51, 186, 51);
+  font-weight: bold;
+ }
+ #order-details-container button{
+  margin: 20px 20px 20px 0;
+ }
+
+       /*
+ --------------------------------------------------- create-order -----------------------------------------------
+ */
+
+ .create-order-form{
+  width: 60%;
+  margin: 0;
+ }
+ .create-order-form .btn{
+  margin-top: 20px;
+ }
+ .create-order-products-list{
+  margin-top: 20px;
+  width: 100%;
+  border-radius: 7px;
+  list-style: none;
+  padding: 0;
+ }
+ .create-order-products-list li {
+  position: relative;
+  margin-top: 20px;
+  background-color: white;
+  padding: 30px 20px 0 20px;
+  border-radius: 10px;
+ }
+ li .delete-icon{
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  cursor: pointer;
+ }
+ li #quantity-alert{
+  display: none;
+ }
+ .form-select {
+  width: 100%;
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: .25rem;
+  transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+ .create-order-products-list select{
+  width: 47%;
+ }
+ .create-order-products-list .input-group{
+  width: 15%;
+ }
+ .create-order-products-mesurments{
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+ }
+
+ #create-order-form-overview{
+  border-radius: 10px;
+  border: 2px solid green;
+  background-color: white;
+  padding: 20px;
+ }
+ .create-order-form-overview select{
+  margin-top: 20px;
+ }
+ .hidden {
+  display: none;
+}
+.col-sm-5{
+  padding: 0;
+  width: 5px;
+}
+#order-total-price{
+  padding: 0;
+  width: 41%;
+  color: rgb(0, 174, 0);
+  font-weight: bold;
+}
+#versed-amount-container{
+  margin: 10px 0 10px 0 ;
+}
+#createdOrderMessage{
+  margin-top: 20px;
+}
+#submitBtn{
+  margin-bottom: 20px;
+}
+
+      /*
+ --------------------------------------------------- orders-list -----------------------------------------------
+ */
+
+
+
+
+
+
+
+
+
+ 
+

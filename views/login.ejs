@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>Karozad</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  </head>
+  <body>
+    <section class="vh-100" style="background-color:#e2f2fd;">
+      <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+          <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+            <div class="card shadow-2-strong" style="border-radius: 1rem;">
+              <div class="card-body p-5 text-center">
+    
+                <h3 class="mb-5">Connexion</h3>
+                <% if(locals.canLogin ==  false){ %>    
+                <div class="alert alert-danger" role="alert">
+                  L'utilisteur n'exist pas ou le mot de pass est incorrect !!
+                </div>
+                <% } %>
+                <form id="search-form" action="/users/login" method="post">
+                <div class="form-outline mb-4">
+                  <input name="username" type="text" id="typeEmailX-2" class="form-control form-control-lg" />
+                  <label  class="form-label" for="typeEmailX-2">Indentifiant</label>
+                </div>
+    
+                <div class="form-outline mb-4">
+                  <input name="password" type="password" id="typePasswordX-2" class="form-control form-control-lg" />
+                  <label class="form-label" for="typePasswordX-2">mot de passe</label>
+                </div>
+    
+                <button class="btn btn-primary btn-lg btn-block" type="submit">Login</button>
+                </form>
+
+                <hr class="my-4">
+    
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

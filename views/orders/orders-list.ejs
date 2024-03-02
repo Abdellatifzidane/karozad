@@ -1,0 +1,42 @@
+
+<div class="orders-list">
+    <ol class="list-group list-group-numbered">
+
+      <% for(var i = 0 ; i < locals.orders.length ; i++){ %>
+        <li data-order-id="<%= orders[i].id  %> " class="list-group-item d-flex justify-content-between align-items-start">
+          <div class="ms-2 me-auto">
+            <div class="fw-bold"> 
+              <strong>
+                <%= orders[i].name  %>                        
+                <%= orders[i].surname  %>        
+              </strong>   
+            </div>
+            <% var orderDate = new Date(orders[i].order_date); %>
+            <% var day = ('0' + orderDate.getDate()).slice(-2); %>
+            <%var month = ('0' + (orderDate.getMonth() + 1)).slice(-2); %>
+             <%var year = orderDate.getFullYear(); %>
+             <% var formattedDate = day + '/' + month + '/' + year; %>
+          <%= formattedDate %>
+          </div>
+          <% if(orders[i].status == "pending"){ %>
+          <span class="badge bg-warning rounded-pill"><%= orders[i].status %></span>
+          <% } %>
+          <% if(orders[i].status == "not-confirmed"){ %>
+          <span class="badge bg-secondary rounded-pill"><%= orders[i].status %></span>
+          <% } %>
+          <% if(orders[i].status == "cancelled"){ %>
+          <span class="badge bg-danger rounded-pill"><%= orders[i].status %></span>
+          <% } %>
+           <% if(orders[i].status == "delivred"){ %>
+          <span class="badge bg-success rounded-pill"><%= orders[i].status %></span>
+           <% } %>
+          <% if(orders[i].status == "finished"){ %>
+          <span class="badge bg-primary rounded-pill"><%= orders[i].status %></span>
+          <% } %>
+        </li>
+        
+       <% } %>
+      </ol> 
+    </div>
+
+
